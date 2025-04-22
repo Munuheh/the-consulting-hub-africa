@@ -1,7 +1,7 @@
- [build]
+[build]
   publish = "public"
 
 [[redirects]]
-  from = "/admin"
-  to = "/admin/"
-  status = 301
+  from = "/*"
+  to = "/index.html"
+  status = 200
