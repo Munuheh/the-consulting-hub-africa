@@ -1,7 +1,5 @@
 [build]
-  publish = "public"
-  functions = "netlify/functions"
-  command = "npm run build"   
+  publish = "public"  # Or simply use "/" if files are at the root level
 
 [[redirects]]
   from = "/admin/*"
