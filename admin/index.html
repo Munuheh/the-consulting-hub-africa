@@ -4,15 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin</title>
+  <!-- Netlify CMS script -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <!-- Netlify Identity Widget for authentication -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <script>
+    // Check if Netlify Identity is available and initialize
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
+          // If the user is not logged in, redirect to the login screen
           window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        } else {
+          // User is logged in, load the CMS interface
+          window.netlifyIdentity.on("logout", () => {
             document.location.href = "/admin/";
           });
         }
