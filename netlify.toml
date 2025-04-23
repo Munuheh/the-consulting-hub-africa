@@ -1,6 +1,3 @@
-[build]
-  publish = "public"  # Or simply use "/" if files are at the root level
-
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
